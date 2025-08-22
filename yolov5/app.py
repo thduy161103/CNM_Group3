@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, jsonify
 from PIL import Image
 import io, torch
+from pathlib import Path
 
 app = Flask(__name__)
 # load custom fruits model if exists, else fallback to default YOLOv5s
@@ -15,12 +16,16 @@ try:
     )
     print(f"Loaded custom model from {weights}")
 except Exception:
+    WEIGHTS_PATH = Path(__file__).resolve().parent.parent / 'runs' / 'train' / 'furniture' / 'exp18' / 'weights' / 'best.pt'
     model = torch.hub.load(
-        'ultralytics/yolov5',
-        'yolov5s',
-        pretrained=True,
+        Path(__file__).resolve().parent,  # local yolov5 directory
+        'custom',
+        str(WEIGHTS_PATH),
+        source='local',
+        force_reload=True,
         trust_repo=True
     )
+    model.eval()
     print("Loaded default YOLOv5s model")
 
 @app.route('/')

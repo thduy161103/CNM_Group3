@@ -1,0 +1,11 @@
+# ignore Python venv
+yolovenv/
+# ignore bytecode
+__pycache__/
+*.py[cod]
+# ignore editor settings
+.vscode/
+
+
+# comment out default ignore for runs folder
+# runs/
