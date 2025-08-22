@@ -1,0 +1,29 @@
+path: data/furniture
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 13
+names:
+  [
+    "armchair",
+    "bed",
+    "cavity",
+    "coffee_table",
+    "dining_table",
+    "large_sink",
+    "large_sofa",
+    "round_table",
+    "sink",
+    "small_sink",
+    "small_sofa",
+    "tub",
+    "twin_sink",
+  ]
+
+roboflow:
+  workspace: 21ktpmcnmgroup3
+  project: robin-c75re-feikv
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/21ktpmcnmgroup3/robin-c75re-feikv/dataset/2
