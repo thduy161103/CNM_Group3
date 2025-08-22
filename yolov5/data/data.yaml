@@ -1,0 +1,8 @@
+path: ../datasets/roboflow
+
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 13
+names: ['armchair', 'bed', 'cavity', 'coffee_table', 'dining_table', 'large_sink', 'large_sofa', 'round_table', 'sink', 'small_sink', 'small_sofa', 'tub', 'twin_sink']
